@@ -75,7 +75,7 @@
          <children>
             <StackPane fx:id="player" prefHeight="274.0" prefWidth="610.0" style="-fx-padding: 20;" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" scaleX="1.55" scaleY="0.75">
                      <image>
                         <Image url="@goat.png" />
                      </image>

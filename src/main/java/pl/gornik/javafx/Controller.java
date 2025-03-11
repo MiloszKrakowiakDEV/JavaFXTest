@@ -2,11 +2,16 @@ package pl.gornik.javafx;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Controller {
 
@@ -108,8 +113,14 @@ public class Controller {
         }
 
     }
-    public void endGame(){
-        Platform.exit();
+    public void endGame() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
+        Stage stage = (Stage)player.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        Platform.runLater(() -> {
+            stage.centerOnScreen();
+        });
     }
     public void restartGame(){
         GridPane.setRowIndex(player,2);

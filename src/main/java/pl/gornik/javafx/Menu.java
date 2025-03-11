@@ -28,15 +28,6 @@ public class Menu {
         Stage stage = (Stage) start.getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
         Controller controller = fxmlLoader.getController();
-        scene.setOnKeyPressed(e -> {
-            switch (e.getCode()){
-                case W -> controller.movePlayerUp();
-                case S -> controller.movePlayerDown();
-                case A -> controller.movePlayerLeft();
-                case D -> controller.movePlayerRight();
-                case TAB -> Platform.exit();
-            }
-        });
         controller.prepareGame();
 
         stage.setScene(scene);

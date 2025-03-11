@@ -20,7 +20,7 @@
    <children>
       <Pane style="-fx-background-color: pink;">
          <children>
-            <StackPane layoutX="337.0">
+            <StackPane layoutX="14.0" layoutY="4.0">
                <children>
                   <Label fx:id="info" alignment="CENTER" contentDisplay="CENTER" style="-fx-alignment: center; -fx-text-alignment: center;" text="Użyj WASD aby ruszać kozą" textFill="WHITE">
                      <font>
@@ -29,27 +29,56 @@
                   </Label>
                </children>
             </StackPane>
-            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" layoutX="326.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#endGame" style="-fx-background-color: #c0c0c0; -fx-border-color: black;" text="Wyjdź" textFill="#fffafa">
+            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" layoutX="407.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#endGame" style="-fx-background-color: #c0c0c0; -fx-border-color: black;" text="Wyjdź" textFill="#fffafa">
                <font>
                   <Font name="Arial Black" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="space" alignment="CENTER" contentDisplay="CENTER" layoutX="789.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#moveToSpace" style="-fx-background-color: #c0c0c0; -fx-border-color: black;" text="Idź" textFill="#fffafa">
+            <VBox layoutX="808.0" layoutY="37.0">
+               <children>
+                  <Label text="Podaj pole" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userField" />
+                  <Button fx:id="space" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#moveToSpace" style="-fx-background-color: #c0c0c0; -fx-border-color: black;" text="Idź" textFill="#fffafa">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Button fx:id="restart" alignment="CENTER" contentDisplay="CENTER" layoutX="496.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#restartGame" style="-fx-background-color: #c0c0c0; -fx-border-color: black;" text="Restart" textFill="#fffafa">
                <font>
                   <Font name="Arial Black" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="restart" alignment="CENTER" contentDisplay="CENTER" layoutX="540.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#restartGame" style="-fx-background-color: #c0c0c0; -fx-border-color: black;" text="Restart" textFill="#fffafa">
+            <Label fx:id="scoreDisplay" layoutX="14.0" layoutY="62.0" prefHeight="32.0" prefWidth="155.0" text="Wynik: " textFill="WHITE">
                <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Button>
-            <TextField fx:id="userField" layoutX="740.0" layoutY="64.0" />
-            <Label layoutX="771.0" layoutY="42.0" text="Podaj pole" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="27.0" />
                </font>
             </Label>
+            <Label fx:id="timerDisplay" layoutX="14.0" layoutY="101.0" prefHeight="32.0" prefWidth="350.0" text="Pozostały czas: " textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="27.0" />
+               </font>
+            </Label>
+            <Button fx:id="submit" alignment="CENTER" contentDisplay="CENTER" layoutX="602.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#submitScore" style="-fx-background-color: #c0c0c0; -fx-border-color: black;" text="Dodaj wynik" textFill="#fffafa" visible="false">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Button>
+            <VBox layoutX="978.0" layoutY="37.0">
+               <children>
+                  <Label text="Podaj pseudonim" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nickname" />
+               </children>
+            </VBox>
          </children>
          <VBox.margin>
             <Insets />

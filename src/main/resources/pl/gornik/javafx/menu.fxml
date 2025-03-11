@@ -19,8 +19,8 @@
             </Label>
          </children>
       </StackPane>
-      <Button layoutX="74.0" layoutY="188.0" mnemonicParsing="false" onAction="#endGame" text="Wyjdź" />
-      <Button fx:id="start" layoutX="477.0" layoutY="187.0" mnemonicParsing="false" onAction="#startGame" text="Start" />
+      <Button layoutX="100.0" layoutY="188.0" mnemonicParsing="false" onAction="#endGame" style="-fx-font-size: 200%; -fx-border-color: black; -fx-background-color: #c0c0c0; -fx-text-fill: white;" text="Wyjdź" />
+      <Button fx:id="start" layoutX="257.0" layoutY="308.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #c0c0c0; -fx-text-fill: white; -fx-border-color: black; -fx-font-size: 200%;" text="Start" />
       <StackPane layoutX="224.0" layoutY="138.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -30,6 +30,6 @@
             </ImageView>
          </children>
       </StackPane>
-      <Button fx:id="score" layoutX="472.0" layoutY="255.0" mnemonicParsing="false" onAction="#checkLeaderboard" text="Wyniki" />
+      <Button fx:id="score" layoutX="405.0" layoutY="188.0" mnemonicParsing="false" onAction="#checkLeaderboard" style="-fx-background-color: #c0c0c0; -fx-text-fill: white; -fx-border-color: black; -fx-font-size: 200%;" text="Wyniki" />
    </children>
 </AnchorPane>

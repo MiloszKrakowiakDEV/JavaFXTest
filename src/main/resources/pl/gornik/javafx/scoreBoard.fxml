@@ -6,12 +6,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.gornik.javafx.ScoreBoard">
    <children>
       <StackPane>
          <children>
-            <Button mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="165.0" text="Powrót" />
+            <Button mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #c0c0c0; -fx-text-fill: white; -fx-border-color: black;" text="Powrót" />
          </children>
       </StackPane>
       <StackPane prefHeight="50.0" prefWidth="600.0">

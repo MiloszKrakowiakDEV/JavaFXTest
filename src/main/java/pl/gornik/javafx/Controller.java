@@ -157,7 +157,7 @@ public class Controller {
         GridPane.setColumnIndex(player,3);
     }
     public static boolean checkIfTouchingPoint(StackPane player, StackPane point){
-        return point.get,,,,,,,,,,,,,,,,,,,,,,,,,,,,,BoundsInParent().intersects(player.getBoundsInParent());
+        return point.getBoundsInParent().intersects(player.getBoundsInParent());
     }
     public static void randomizePointPlacement(StackPane point, int colSize, int rowSize){
         Random random = new Random();

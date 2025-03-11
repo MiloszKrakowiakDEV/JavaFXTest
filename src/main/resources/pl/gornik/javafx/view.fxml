@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <VBox fx:id="vbox1" prefHeight="702.0" prefWidth="1169.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.gornik.javafx.Controller">
@@ -73,7 +74,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <StackPane fx:id="player" prefHeight="274.0" prefWidth="610.0" style="-fx-padding: 20;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <StackPane fx:id="player" prefHeight="30.0" prefWidth="100.0" style="-fx-padding: 20;" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" scaleX="1.55" scaleY="0.75">
                      <image>
@@ -90,6 +91,11 @@
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
+            </StackPane>
+            <StackPane fx:id="point" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="DODGERBLUE" radius="34.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
             </StackPane>
          </children>
          <VBox.margin>

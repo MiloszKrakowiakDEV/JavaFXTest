@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Menu {
+    @FXML
+    private Button score;
 
     @FXML
     private Button start;
@@ -36,9 +38,19 @@ public class Menu {
             }
         });
         controller.prepareGame();
+
         stage.setScene(scene);
             stage.centerOnScreen();
 
+    }
+
+    @FXML
+    void checkLeaderboard(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("scoreBoard.fxml"));
+        Stage stage = (Stage)score.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
 }

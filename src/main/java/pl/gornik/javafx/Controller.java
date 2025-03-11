@@ -9,14 +9,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Random;
+import java.util.Stack;
+import java.util.zip.GZIPInputStream;
 
 public class Controller {
-
+    private int score=0;
     @FXML
     private Button restart;
+
+    @FXML
+    private StackPane point;
 
     @FXML
     private Label info;
@@ -45,7 +53,10 @@ public class Controller {
         }else{
             player.toFront();
             GridPane.setRowIndex(player,GridPane.getRowIndex(player)-1);
-            grid.requestFocus();
+            if(checkIfTouchingPoint(player,point)){
+                randomizePointPlacement(point, grid.getColumnCount(), grid.getRowCount());
+                score++;
+            }
         }
     }
     public void movePlayerDown(){
@@ -54,6 +65,10 @@ public class Controller {
         }else{
             player.toFront();
             GridPane.setRowIndex(player,GridPane.getRowIndex(player)+1);
+            if(checkIfTouchingPoint(player,point)){
+                randomizePointPlacement(point, grid.getColumnCount(), grid.getRowCount());
+                score++;
+            }
         }
     }
     public void movePlayerRight(){
@@ -62,6 +77,10 @@ public class Controller {
         }else{
             player.toFront();
             GridPane.setColumnIndex(player,GridPane.getColumnIndex(player)+1);
+            if(checkIfTouchingPoint(player,point)){
+                randomizePointPlacement(point, grid.getColumnCount(), grid.getRowCount());
+                score++;
+            }
         }
     }
     public void movePlayerLeft(){
@@ -70,9 +89,21 @@ public class Controller {
         }else{
             player.toFront();
             GridPane.setColumnIndex(player,GridPane.getColumnIndex(player)-1);
+            if(checkIfTouchingPoint(player,point)){
+                randomizePointPlacement(point, grid.getColumnCount(), grid.getRowCount());
+                score++;
+            }
         }
     }
     public void prepareGame(){
+        System.out.println(player.getPrefWidth());
+        Random random = new Random();
+        int pointColPos = random.nextInt(0,grid.getColumnCount());
+        int pointRowPos = random.nextInt(0, grid.getRowCount());
+        GridPane.setColumnIndex(point,pointColPos);
+        GridPane.setRowIndex(point,pointRowPos);
+        point.setVisible(true);
+
         for (int i = 0; i < grid.getRowCount(); i++) {
             for (int j = 0; j < grid.getColumnCount(); j++) {
                 Pane pane = new Pane();
@@ -88,6 +119,7 @@ public class Controller {
 
             }
         }
+        point.toFront();
         player.toFront();
 
     }
@@ -124,5 +156,14 @@ public class Controller {
         GridPane.setRowIndex(player,2);
         GridPane.setColumnIndex(player,3);
     }
+    public static boolean checkIfTouchingPoint(StackPane player, StackPane point){
+        return point.getBoundsInParent().intersects(player.getBoundsInParent());
+    }
+    public static void randomizePointPlacement(StackPane point, int colSize, int rowSize){
+        Random random = new Random();
+        GridPane.setRowIndex(point,random.nextInt(0,rowSize));
+        GridPane.setColumnIndex(point, random.nextInt(0, colSize));
+    }
+
 
 }

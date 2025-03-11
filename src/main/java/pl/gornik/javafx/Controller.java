@@ -118,9 +118,7 @@ public class Controller {
         Stage stage = (Stage)player.getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
-        Platform.runLater(() -> {
-            stage.centerOnScreen();
-        });
+        stage.centerOnScreen();
     }
     public void restartGame(){
         GridPane.setRowIndex(player,2);

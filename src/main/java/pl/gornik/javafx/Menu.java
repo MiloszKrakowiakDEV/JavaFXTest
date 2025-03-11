@@ -37,9 +37,7 @@ public class Menu {
         });
         controller.prepareGame();
         stage.setScene(scene);
-        Platform.runLater(() -> {
             stage.centerOnScreen();
-        });
 
     }
 

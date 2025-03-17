@@ -35,6 +35,15 @@ public class Menu {
 
     }
 
+    public void goSettings() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("settings.fxml"));
+        Stage stage = (Stage) start.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.centerOnScreen();
+
+    }
+
     @FXML
     void checkLeaderboard(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("scoreBoard.fxml"));

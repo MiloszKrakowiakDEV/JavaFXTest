@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.gornik.javafx.Menu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.gornik.javafx.Menu">
    <children>
       <StackPane layoutX="100.0" layoutY="34.0" prefHeight="150.0" prefWidth="411.0">
          <children>
@@ -20,7 +20,7 @@
          </children>
       </StackPane>
       <Button layoutX="100.0" layoutY="188.0" mnemonicParsing="false" onAction="#endGame" style="-fx-font-size: 200%; -fx-border-color: black; -fx-background-color: #c0c0c0; -fx-text-fill: white;" text="Wyjdź" />
-      <Button fx:id="start" layoutX="257.0" layoutY="308.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #c0c0c0; -fx-text-fill: white; -fx-border-color: black; -fx-font-size: 200%;" text="Start" />
+      <Button fx:id="start" layoutX="108.0" layoutY="266.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #c0c0c0; -fx-text-fill: white; -fx-border-color: black; -fx-font-size: 200%;" text="Start" />
       <StackPane layoutX="224.0" layoutY="138.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -31,5 +31,6 @@
          </children>
       </StackPane>
       <Button fx:id="score" layoutX="405.0" layoutY="188.0" mnemonicParsing="false" onAction="#checkLeaderboard" style="-fx-background-color: #c0c0c0; -fx-text-fill: white; -fx-border-color: black; -fx-font-size: 200%;" text="Wyniki" />
+      <Button fx:id="settings" layoutX="405.0" layoutY="266.0" mnemonicParsing="false" onAction="#goSettings" style="-fx-background-color: #c0c0c0; -fx-text-fill: white; -fx-border-color: black; -fx-font-size: 200%;" text="Ustawienia" />
    </children>
 </AnchorPane>
